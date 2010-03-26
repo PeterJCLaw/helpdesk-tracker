@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Issues list</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.18" />
+	<meta http-equiv="refresh" content="5" />
+
+	<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+
+<body id="view_open">
+    <div><a href="/tracker/">View ongoing issues</a> <a href="/tracker/createissueform">Create an issue</a> <a href="/tracker/allissues">View all issues</a></div>
+    <table border="1">
+	<tr><th>Team Name</th><th>Short Issue Description</th><th>Assigned Mentor</th><th>Last Touched</th><th>Status</th><th>View</th></tr>
+        {% if issues %}
+            {% for issue in issues %}
+            <tr>
+                <td>{{issue.team}}</td><td>{{issue.shortDesc}}</td<td>{{issue.assignedTo}}</td><td>{{issue.updated|date:"H:i:s"}}</td><td>{% ifequal issue.status 1 %} Open {% endifequal %}{% ifequal issue.status 2 %} In Progress {% endifequal %}{% ifequal issue.status 4 %} Closed {% endifequal %}{% ifequal issue.status 8 %} Won't Fix {% endifequal %}{% ifequal issue.status 16 %} Can't Reproduce {% endifequal %}</td><td><a href="/tracker/viewissue/{{issue.id}}">View</a></td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>
