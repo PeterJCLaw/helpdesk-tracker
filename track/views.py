@@ -2,6 +2,8 @@
 from django.http import *
 from models import *
 from django.template import Context, loader
+import datetime
+import time
 
 
 def list_open_issues(request):
@@ -37,10 +39,13 @@ def update_issue(request):
 	mentor = request.POST['assign']
         i = issue.objects.get(id = issid)
         #i.ongoingNotes = od
-	i.initialDesc += "\n" + od
+	if (od != ""):
+		i.initialDesc += "\n" + datetime.datetime.now().strftime("[%H:%M:%S]: ")   + od
 	i.ongoingNotes = ""
         i.status = int(statusupdate)
-	i.assignedTo = mentor
+	if (mentor != i.assignedTo):
+		i.initialDesc += "\n" + datetime.datetime.now().strftime("[%H:%M:%S]: Assigned mentor changed from ") + i.assignedTo + " to " + mentor
+		i.assignedTo = mentor
         i.save()
         if (i.status == CLOSED_STATUS):
             return HttpResponseRedirect("/tracker/")
