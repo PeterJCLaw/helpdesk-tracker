@@ -5,7 +5,7 @@
 <head>
 	<title>Create an issue</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://ninjacow.xen.prgmr.com/style.css" />
 	<meta name="generator" content="Geany 0.18" />
 </head>
 
@@ -15,18 +15,18 @@
     <table border="1">
         <tr>
             <th><label for="tn">Team Name</label></th>
-            <td><input name = "tn" type="text"/></td>
+            <td><input name = "tn" type="text"/> <span class="help">Please use the format <span class="code">team_number:team_name</span></span></td>
         </tr>
         <tr>
             <th><label for="shortdesc">Short Description</label></th>
-            <td><input name = "shortdesc" type="text" maxlength="100"/></td>
+            <td><input name = "shortdesc" type="text" maxlength="100"/> <span class="help">A short (100 char max) description of the issue</span></td>
         </tr>
         <tr>
             <th><label for="longdesc">Long Description</label></th>
             <td><textarea name="longdesc"></textarea></td>
         </tr>
         <tr>
-        <td colspan="2"><input type="submit" value="submit"></td>
+        <td colspan="2"><input type="submit" value="Save"></td>
         </tr>
     </table>
     </form>
