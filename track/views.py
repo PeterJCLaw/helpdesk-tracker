@@ -28,7 +28,7 @@ def view_issue(request, issueid):
         
         return HttpResponse (template.render(c))
     except:
-        return HttpResponseRedirect ("/tracker/")
+        return HttpResponseRedirect (settings.BASE_URL)
     
 
 def update_issue(request):
@@ -48,9 +48,9 @@ def update_issue(request):
 		i.assignedTo = mentor
         i.save()
         if (i.status == CLOSED_STATUS):
-            return HttpResponseRedirect("/tracker/")
+            return HttpResponseRedirect(settings.BASE_URL)
         else:
-            return HttpResponseRedirect("/tracker/viewissue/"+str(i.id))
+            return HttpResponseRedirect(settings.BASE_URL+"viewissue/"+str(i.id))
     #except:
     #return HttpResponse("bad request", status=500)
 
@@ -73,9 +73,9 @@ def create_issue(request):
         i.ongoingNotes = ""
 	i.assignedTo = ""
         i.save()
-        return HttpResponseRedirect("/tracker/viewissue/"+str(i.id))
+        return HttpResponseRedirect(settings.BASE_URL+"viewissue/"+str(i.id))
     #except:
-#	return HttpResponseRedirect("/tracker/createissueform")
+#	return HttpResponseRedirect(settings.BASE_URL+"createissueform")
         
 def allissues(request):
     issues = issue.objects.all()
