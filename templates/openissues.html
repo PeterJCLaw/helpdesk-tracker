@@ -20,7 +20,7 @@
         {% if issues %}
             {% for issue in issues %}
             <tr>
-                <td>{{issue.team}}</td><td>{{issue.shortDesc}}</td<td>{{issue.assignedTo}}</td><td>{{issue.updated|date:"H:i:s"}}</td><td>{% ifequal issue.status 1 %} Open {% endifequal %}{% ifequal issue.status 2 %} In Progress {% endifequal %}{% ifequal issue.status 4 %} Closed {% endifequal %}{% ifequal issue.status 8 %} Won't Fix {% endifequal %}{% ifequal issue.status 16 %} Can't Reproduce {% endifequal %}</td><td><a href="{% base_url %}viewissue/{{issue.id}}">View</a></td>
+                <td>{{issue.team}}</td><td>{{issue.shortDesc}}</td><td>{{issue.assignedTo}}</td><td>{{issue.updated|date:"H:i:s"}}</td><td>{% ifequal issue.status 1 %} Open {% endifequal %}{% ifequal issue.status 2 %} In Progress {% endifequal %}{% ifequal issue.status 4 %} Closed {% endifequal %}{% ifequal issue.status 8 %} Won't Fix {% endifequal %}{% ifequal issue.status 16 %} Can't Reproduce {% endifequal %}</td><td><a href="{% base_url %}viewissue/{{issue.id}}">View</a></td>
             </tr>
             {% endfor %}
         {% endif %}
