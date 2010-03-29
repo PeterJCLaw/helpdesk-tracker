@@ -35,11 +35,13 @@
                 <td><label for="og">In Progress:</label><input id="og" type="radio" name="su" value="2" {% ifequal issue.status 2 %} checked="checked" {% endifequal %}></td>
                 <td><label for="c">Closed:</label><input id="c" type="radio" name="su" value="4" {% ifequal issue.status 4 %} checked="checked" {% endifequal %}></td>
             </tr>
+            <!--
             <tr>
 		<td></td>
 		<td><label for="wf">Won't Fix:</label><input id="wf" type="radio" name="su" value="8" {% ifequal issue.status 8 %} checked="checked" {%endifequal %}></td>
 		<td><label for="cr">Can't Reproduce</label><input id="cr" type="radio" name="su" value="16" {%ifequal issue.status 16%} checked="checked" {%endifequal%}></td>
 	    </tr>
+            -->
             <tr>
                 <td colspan="4"><input type="hidden" name="id" value="{{issue.id}}"/><input type="submit" value="Save"/></td>
             </tr>
