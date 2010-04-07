@@ -1,0 +1,54 @@
+body {
+	margin: 20px 5px;
+	font-family: sans-serif;
+}
+
+div {
+	display: block;
+}
+div a {
+	background-color: #ddd;
+	padding: 20px;
+	margin: 5px;
+	color: #111;
+	display: block;
+	float: left;
+}
+
+table {
+	border-collapse: collapse;
+}
+th, td {
+	padding: 1px 4px;
+}
+
+label {
+	white-space: nowrap;
+}
+
+.help {
+	font-size: 0.9em;
+}
+.code {
+	font-family: courier, sans-serif;
+}
+
+#view_open table, #view_all table {
+	clear: both;
+	width: 60%;
+}
+
+#create table {
+	width: 80%;
+}
+#create textarea {
+	width: 95%;
+	height: 10em;
+}
+#create label {
+	display: block;
+	text-align: right;
+}
+#create th {
+	width: 170px;
+}
