@@ -39,6 +39,9 @@ form th.top {
 form tr.save td {
 	border: 0 none;
 }
+form tr.save td input {
+	font-size: 1em;
+}
 
 .help {
 	font-size: 0.9em;
