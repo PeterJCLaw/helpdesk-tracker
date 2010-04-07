@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     (r'^createissue$', 'tracker.track.views.create_issue'),
     (r'^createissueform$', 'tracker.track.views.create_issue_echoer'),
     (r'^allissues$', 'tracker.track.views.allissues'),
+    (r'^issuejson/(\d+)/$', 'tracker.track.views.get_issue_json'),
 )
