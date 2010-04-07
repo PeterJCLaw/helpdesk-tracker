@@ -12,7 +12,7 @@
         <p>{{issue.shortDesc}}</p>
         <pre id="desc">{{issue.initialDesc}}</pre>
         <form action="{% base_url %}updateissue" method="post">
-        <table border = "1">
+        <table>
             <tr>
                 <th class="top"><label for="od">Ongoing Description</label></th>
                 <td colspan="3"><textarea name="od" rows="10" cols="80">{{issue.ongoingNotes}}</textarea></td>

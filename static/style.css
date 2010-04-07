@@ -16,9 +16,11 @@ div a {
 }
 
 table {
+	border: 1px solid black;
 	border-collapse: collapse;
 }
 th, td {
+	border: 1px solid black;
 	padding: 1px 4px;
 }
 

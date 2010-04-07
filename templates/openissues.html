@@ -14,7 +14,7 @@
 
 {% block body %}
     <div><a href="{% base_url %}">View ongoing issues</a> <a href="{% base_url %}createissueform">Create an issue</a> <a href="{% base_url %}allissues">View all issues</a></div>
-    <table border="1">
+    <table>
 	<tr><th>Team Name</th><th>Short Issue Description</th><th>Assigned Mentor</th><th>Last Touched</th><th>Status</th><th>View</th></tr>
         {% if issues %}
             {% for issue in issues %}
