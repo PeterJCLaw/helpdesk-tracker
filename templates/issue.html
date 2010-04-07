@@ -7,7 +7,6 @@
 {% block body-id %}view{% endblock %}
 
 {% block body %}
-	<a href="{% base_url %}">Return to viewing issues</a>
     <div>
         <h3>Team: {{issue.team}}; <span id="touched">Last Touched: {{issue.updated|date:"H:i:s"}}</span></h3>
         <p>{{issue.shortDesc}}</p>
