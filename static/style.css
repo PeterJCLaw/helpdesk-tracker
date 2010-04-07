@@ -42,6 +42,11 @@ form th.top {
 	font-family: courier, sans-serif;
 }
 
+#home-link {
+	display: block;
+	margin-bottom: 10px;
+}
+
 #view_open table, #view_all table {
 	clear: both;
 	width: 60%;
