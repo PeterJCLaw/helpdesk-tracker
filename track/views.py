@@ -7,8 +7,8 @@ import time
 
 
 def list_open_issues(request):
-#    issues = issue.objects.filter(status=OPEN_STATUS)
-    issues = issue.objects.exclude(status=CLOSED_STATUS).order_by('updated')
+    #Assumes that the CLOSED_STATUS is the middle
+    issues = issue.objects.filter(status__lt=CLOSED_STATUS).order_by('updated')
     template = loader.get_template('openissues.html')
     c = Context({
         'issues':issues
