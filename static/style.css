@@ -26,6 +26,11 @@ label {
 	white-space: nowrap;
 }
 
+form th {
+	text-align: right;
+	width: 175px;
+}
+
 .help {
 	font-size: 0.9em;
 }
@@ -44,11 +49,4 @@ label {
 #create textarea {
 	width: 95%;
 	height: 10em;
-}
-#create label {
-	display: block;
-	text-align: right;
-}
-#create th {
-	width: 170px;
 }
