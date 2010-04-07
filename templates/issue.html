@@ -34,8 +34,9 @@
 		<td><label for="cr">Can't Reproduce</label><input id="cr" type="radio" name="su" value="16" {%ifequal issue.status 16%} checked="checked" {%endifequal%}></td>
 	    </tr>
             -->
-            <tr>
-                <td colspan="4"><input type="hidden" name="id" value="{{issue.id}}"/><input type="submit" value="Save"/></td>
+            <tr class="save">
+                <td>&nbsp;</td>
+                <td colspan="3"><input type="hidden" name="id" value="{{issue.id}}"/><input type="submit" value="Save"/></td>
             </tr>
         </table>
             

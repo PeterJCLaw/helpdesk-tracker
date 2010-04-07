@@ -36,6 +36,9 @@ form th.top {
 	padding-top: 5px;
 	vertical-align: top;
 }
+form tr.save td {
+	border: 0 none;
+}
 
 .help {
 	font-size: 0.9em;
