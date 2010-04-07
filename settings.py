@@ -2,6 +2,7 @@
 
 import os.path #so that it's portable
 
+DEV_ENV = True
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

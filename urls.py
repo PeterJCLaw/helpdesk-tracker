@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -21,3 +22,7 @@ urlpatterns = patterns('',
     (r'^createissueform$', 'tracker.track.views.create_issue_echoer'),
     (r'^allissues$', 'tracker.track.views.allissues'),
 )
+if settings.DEV_ENV:
+    urlpatterns += patterns('',
+        (r'^'+settings.MEDIA_URL+'(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
+    )
