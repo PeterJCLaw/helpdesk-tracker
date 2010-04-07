@@ -17,8 +17,8 @@ def list_open_issues(request):
     return HttpResponse (template.render(c))
 
 def view_issue(request, issueid):
-    #if 1:
-    try:
+    if 1:
+    #try:
         i = issue.objects.get(id = issueid)
         template = loader.get_template('issue.html')
         
@@ -27,8 +27,8 @@ def view_issue(request, issueid):
         })
         
         return HttpResponse (template.render(c))
-    except:
-        return HttpResponseRedirect (settings.BASE_URL)
+    #except:
+    #    return HttpResponseRedirect (settings.BASE_URL)
     
 
 def update_issue(request):
@@ -71,7 +71,7 @@ def create_issue(request):
         i.initialDesc = longdesc
         i.status = OPEN_STATUS
         i.ongoingNotes = ""
-	i.assignedTo = ""
+        i.assignedTo = ""
         i.save()
         return HttpResponseRedirect(settings.BASE_URL+"viewissue/"+str(i.id))
     #except:
@@ -85,3 +85,12 @@ def allissues(request):
     })
     
     return HttpResponse (template.render(c))
+
+
+def get_issue_json(request, issueid):
+    if(1):
+        iss = issue.objects.get(id=int(issueid))
+        json = '{"description":"%s", "assigned":"%s", "status":%d, "touched":"%s"}' % (iss.initialDesc, iss.assignedTo, iss.status, iss.updated.strftime("%H:%M:%S"))
+        json = json.replace("\n", "\\n")
+        return HttpResponse(json)
+    
