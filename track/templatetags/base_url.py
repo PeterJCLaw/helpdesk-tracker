@@ -14,7 +14,8 @@ def base(file):
 @register.tag
 def base_url(parser, token):
     '''
-    Concatenate BASE_URL and file.
+    Return root url of the site.
+    This is BASE_URL + file.
     '''
 
     return BaseUrl()
