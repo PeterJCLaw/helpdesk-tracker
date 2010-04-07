@@ -30,6 +30,10 @@ form th {
 	text-align: right;
 	width: 175px;
 }
+form th.top {
+	padding-top: 5px;
+	vertical-align: top;
+}
 
 .help {
 	font-size: 0.9em;
