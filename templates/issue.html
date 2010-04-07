@@ -3,6 +3,15 @@
 {% load base_url %}
 
 {% block title %}Issue: {{issue.shortDesc}}{% endblock %}
+{% block head %}
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static_url %}issue-auto-update.js"></script>
+	<script type="text/javascript">
+		var BASE_URL = '{% base_url %}';
+		var ID = {{ issue.id }};
+		window.onload = init;
+	</script>
+{% endblock head %}
 
 {% block body-id %}view{% endblock %}
 
@@ -42,58 +51,4 @@
             
         </form>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript">
-        
-        var overwriteInput = 1;
-        var lastUpdated = new Date().getTime();
-                
-        function updateStatus(code) {
-            
-            
-            if (code == 1) {
-                $("#op").attr("checked", "true");
-            } else if (code == 2) {
-                $("#og").attr("checked", "true");
-            } else if (code == 4) {
-                $("#c").attr("checked", "true");
-            }
-            
-        }
-        
-        function updateAssigned(assignedTo) {
-            $("#assigninput").attr("value", assignedTo);
-        }
-        
-        function pull() {
-            $.get('{% base_url %}issuejson/{{ issue.id }}/', function(data) {                
-                var issue = eval('(' + data + ')');
-                //alert(issue.description);
-                $("#desc").html(issue.description.replace("\\\\n", "cow"));
-                $("#touched").html("Last Touched: " + issue.touched)
-                console.log(overwriteInput == 1);
-                console.log(lastUpdated + 300 < new Date().getTime());
-                console.log(lastUpdated + 300 < new Date().getTime() || overwriteInput == 1);
-                if (lastUpdated + 300 > new Date().getTime() || overwriteInput == 1) {
-                    console.log("cows2");
-                    updateStatus(issue.status);
-                    updateAssigned(issue.assigned);
-                    overwriteInput = 1;
-                }
-                //alert("it works");
-            });
-        }
-        
-        function noinputOverwrite (data) {
-            console.log("cows");
-            overwriteInput = 0;
-            lastUpdated = new Date().getTime();
-        }
-        
-        $("input").bind("focusin", noinputOverwrite);
-        
-        $("textarea").bind("focusin", noinputOverwrite);
-
-        setInterval(pull,1500)
-    </script>
 {% endblock body %}
