@@ -46,3 +46,18 @@ function init() {
 	$("input").bind("onselect", noinputOverwrite);
 	setInterval(pull,1500);
 }
+
+var dont_log = true;
+function log(what) {
+	if( dont_log && typeof console != 'object')
+		return;
+	dont_log = false;
+	console.log(what);
+}
+function dir(what) {
+	if( dont_log && typeof console != 'object')
+		return;
+	dont_log = false;
+	console.dir(what);
+}
+
