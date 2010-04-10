@@ -18,11 +18,11 @@ function pull() {
 		//alert(issue.description);
 		$("#desc").html(issue.description.replace("\\\\n", "cow"));
 		$("#touched").html("Last Touched: " + issue.touched)
-		console.log(overwriteInput == 1);
-		console.log(lastUpdated + 300 < new Date().getTime());
-		console.log(lastUpdated + 300 < new Date().getTime() || overwriteInput == 1);
+		log(overwriteInput == 1);
+		log(lastUpdated + 300 < new Date().getTime());
+		log(lastUpdated + 300 < new Date().getTime() || overwriteInput == 1);
 		if (lastUpdated + 300 > new Date().getTime() || overwriteInput == 1) {
-			console.log("cows2");
+			log("cows2");
 			updateStatus(issue.status);
 			updateAssigned(issue.assigned);
 			overwriteInput = 1;
@@ -32,7 +32,7 @@ function pull() {
 }
 
 function noinputOverwrite (data) {
-	console.log("cows");
+	log("cows");
 	overwriteInput = 0;
 	lastUpdated = new Date().getTime();
 }
