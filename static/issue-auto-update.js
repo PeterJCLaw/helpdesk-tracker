@@ -43,5 +43,6 @@ var lastUpdated = new Date().getTime();
 function init() {
 	$("input").bind("focusin", noinputOverwrite);
 	$("textarea").bind("focusin", noinputOverwrite);
+	$("input").bind("onselect", noinputOverwrite);
 	setInterval(pull,1500);
 }
