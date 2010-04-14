@@ -33,6 +33,10 @@ function pull() {
 	});
 }
 
+function time() {
+	return Math.round(new Date().getTime() / 1000);
+}
+
 function noinputOverwrite (data) {
        log("*click*");
 	lastUpdated = new Date().getTime();
