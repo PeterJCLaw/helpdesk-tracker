@@ -29,7 +29,7 @@ function pull() {
 		} else {
 			log('too much recent activity -- bailing');
 		}
-		//alert("it works");
+
 	});
 }
 
