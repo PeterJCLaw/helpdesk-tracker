@@ -21,11 +21,11 @@ function pull() {
 		log('Updating');
 		log("lastClick: "+(time()-lastClick)+' ago');
 
-		if (lastUpdated + 300 > new Date().getTime() || overwriteInput == 1) {
-			log("cows2");
+		// if more than 5 mins ago
+		if( lastClick + 300 < time() ) {
+			log("Overwriting inputs");
 			updateStatus(issue.status);
 			updateAssigned(issue.assigned);
-			overwriteInput = 1;
 		} else {
 			log('too much recent activity -- bailing');
 		}
@@ -38,12 +38,11 @@ function time() {
 }
 
 function noinputOverwrite (data) {
-       log("*click*");
-	lastUpdated = new Date().getTime();
+	log("*click*");
+	lastClick = time();
 }
 
-var overwriteInput = 1;
-var lastUpdated = new Date().getTime();
+var lastClick = 0;
 
 function init() {
 	$("input").bind("focusin", noinputOverwrite);
