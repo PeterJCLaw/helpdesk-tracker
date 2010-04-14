@@ -18,22 +18,23 @@ function pull() {
 		//alert(issue.description);
 		$("#desc").html(issue.description.replace("\\\\n", "cow"));
 		$("#touched").html("Last Touched: " + issue.touched)
-		log(overwriteInput == 1);
-		log(lastUpdated + 300 < new Date().getTime());
-		log(lastUpdated + 300 < new Date().getTime() || overwriteInput == 1);
+		log('Updating');
+		log("lastClick: "+(time()-lastClick)+' ago');
+
 		if (lastUpdated + 300 > new Date().getTime() || overwriteInput == 1) {
 			log("cows2");
 			updateStatus(issue.status);
 			updateAssigned(issue.assigned);
 			overwriteInput = 1;
+		} else {
+			log('too much recent activity -- bailing');
 		}
 		//alert("it works");
 	});
 }
 
 function noinputOverwrite (data) {
-	log("cows");
-	overwriteInput = 0;
+       log("*click*");
 	lastUpdated = new Date().getTime();
 }
 
