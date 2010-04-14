@@ -3,6 +3,14 @@
 {% load base_url %}
 
 {% block title %}Create an issue{% endblock %}
+{% block head %}
+	<script type="text/javascript">
+		function do_focus() {
+			document.getElementById('tn').focus();
+		}
+		window.onload = do_focus;
+	</script>
+{% endblock head %}
 
 {% block body-id %}create{% endblock %}
 
@@ -11,7 +19,7 @@
     <table>
         <tr>
             <th><label for="tn">Team Name</label></th>
-            <td><input name = "tn" type="text"/> <span class="help">Please use the format <span class="code">team_number:team_name</span></span></td>
+            <td><input id="tn" name="tn" type="text"/> <span class="help">Please use the format <span class="code">team_number:team_name</span></span></td>
         </tr>
         <tr>
             <th><label for="shortdesc">Short Description</label></th>
