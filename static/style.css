@@ -6,7 +6,7 @@ body {
 div {
 	display: block;
 }
-div a {
+.buttons a {
 	background-color: #ddd;
 	padding: 20px;
 	margin: 5px;
