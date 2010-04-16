@@ -56,8 +56,8 @@ form tr.save td input {
 }
 
 #view_open table, #view_all table {
-	clear: both;
-	width: 60%;
+	clear: left;
+	width: 80%;
 }
 
 #create table {
