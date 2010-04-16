@@ -14,11 +14,11 @@
 
 {% block body %}
     <span class="count">{{issues|length}}</span>
-    <div class="buttons">
-	<a href="{% base_url %}">View ongoing issues</a>
-	<a href="{% base_url %}createissueform" accesskey="c">Create an issue</a>
-	<a href="{% base_url %}allissues">View all issues</a>
-    </div>
+    <ul class="buttons">
+	<li><a href="{% base_url %}"><span>View ongoing issues</span></a></span></li>
+	<li><a href="{% base_url %}createissueform" accesskey="c"><span>Create an issue</span></a></li>
+	<li><a href="{% base_url %}allissues"><span>View all issues</span></a></li>
+    </ul>
     <table>
 	<tr><th>Team Name</th><th>Short Issue Description</th><th>Assigned Mentor</th><th>Last Touched</th><th>Status</th><th>View</th></tr>
         {% if issues %}

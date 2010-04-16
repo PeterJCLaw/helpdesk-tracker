@@ -6,13 +6,25 @@ body {
 div {
 	display: block;
 }
-.buttons a {
+ul.buttons {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.buttons li {
+	color: #111;
+	display: block;
+	float: left;
+}
+ul.buttons li a span {
+	text-decoration: underline;
+}
+ul.buttons li span {
 	background-color: #ddd;
 	padding: 20px;
 	margin: 5px;
 	color: #111;
 	display: block;
-	float: left;
 }
 
 table {
