@@ -6,6 +6,14 @@
 
 {% block head %}
 	<meta http-equiv="refresh" content="5" />
+	<script type="text/javascript">
+		function showTime() {
+			time = new Date();
+			timeBox = document.getElementById('time');
+			timeBox.innerHTML = time.getHours()+":"+time.getMinutes();
+		}
+		window.onload = showTime;
+	</script>
 {% endblock %}
 
 {% block body-id %}view_open{% endblock %}
@@ -18,6 +26,7 @@
 	<li><a href="{% base_url %}"><span>View ongoing issues</span></a></span></li>
 	<li><a href="{% base_url %}createissueform" accesskey="c"><span>Create an issue</span></a></li>
 	<li><a href="{% base_url %}allissues"><span>View all issues</span></a></li>
+	<li><span id="time"></span></li>
     </ul>
     <table>
 	<tr><th>Team Name</th><th>Short Issue Description</th><th>Assigned Mentor</th><th>Last Touched</th><th>Status</th><th>View</th></tr>
