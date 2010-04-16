@@ -59,6 +59,11 @@ form tr.save td input {
 	clear: left;
 	width: 80%;
 }
+#view_open .count {
+	float: right;
+	font-size: 7em;
+	margin-right: 12px;
+}
 
 #create table {
 	width: 80%;
