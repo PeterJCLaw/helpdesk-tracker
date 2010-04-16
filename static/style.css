@@ -57,6 +57,7 @@ form tr.save td input {
 
 #view_open table, #view_all table {
 	clear: left;
+	margin: 5px;
 	width: 80%;
 }
 #view_open .count {
