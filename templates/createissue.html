@@ -4,6 +4,7 @@
 
 {% block title %}Create an issue{% endblock %}
 {% block head %}
+	<script type="text/javascript" src="{% static_url %}create-issue-validator.js"></script>
 	<script type="text/javascript">
 		function do_focus() {
 			document.getElementById('tn').focus();
@@ -15,7 +16,7 @@
 {% block body-id %}create{% endblock %}
 
 {% block body %}
-	<form action="{% base_url %}createissue" method="post">
+	<form action="{% base_url %}createissue" method="post" onsubmit="return validate(this);">
     <table>
         <tr>
             <th><label for="tn">Team Name</label></th>
