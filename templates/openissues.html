@@ -21,7 +21,7 @@
 {% block home-link %}{% endblock %}
 
 {% block body %}
-    <span class="count">{{issues|length}}</span>
+    <span class="count">{{oissues}}</span>
     <ul class="buttons">
 	<li><a href="{% base_url %}"><span>View ongoing issues</span></a></span></li>
 	<li><a href="{% base_url %}createissueform" accesskey="c"><span>Create an issue</span></a></li>
