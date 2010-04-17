@@ -3,7 +3,6 @@ function validate(FORM) {
 
 	fields['Team Name'] = FORM.tn;
 	fields['Short Description'] = FORM.shortdesc;
-	fields['Long Description'] = FORM.longdesc;
 
 	for( label in fields ) {
 		input = fields[label];
