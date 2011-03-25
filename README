@@ -1,0 +1,11 @@
+
+This is the helpdesk issue tracking system that we've used at the
+competition and some Tech Days. It runs on Django, and provides a very
+simple interface.
+
+External Requirements:
+ * Django
+
+Ubuntu Install line:
+ [sudo] apt-get install python-django
+
