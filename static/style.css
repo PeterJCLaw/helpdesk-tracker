@@ -28,12 +28,15 @@ ul.buttons li span {
 }
 
 table {
-	border: 1px solid black;
+	border: 1px solid #707070;
 	border-collapse: collapse;
 }
+#view_open th, #view_all th {
+	background-color: #F2F2F2;
+}
 th, td {
-	border: 1px solid black;
-	padding: 1px 4px;
+	border: 1px solid #707070;
+	padding: 3px 7px;
 }
 
 label {
