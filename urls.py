@@ -15,13 +15,13 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
-    (r'^viewissue/(\d+)$', 'tracker.track.views.view_issue'),
-    (r'^$', 'tracker.track.views.list_open_issues'),
-    (r'^updateissue$', 'tracker.track.views.update_issue'),
-    (r'^createissue$', 'tracker.track.views.create_issue'),
-    (r'^createissueform$', 'tracker.track.views.create_issue_echoer'),
-    (r'^allissues$', 'tracker.track.views.allissues'),
-    (r'^issuejson/(\d+)/$', 'tracker.track.views.get_issue_json'),
+    (r'^viewissue/(\d+)$',  'helpdesk-tracker.track.views.view_issue'),
+    (r'^$',                 'helpdesk-tracker.track.views.list_open_issues'),
+    (r'^updateissue$',      'helpdesk-tracker.track.views.update_issue'),
+    (r'^createissue$',      'helpdesk-tracker.track.views.create_issue'),
+    (r'^createissueform$',  'helpdesk-tracker.track.views.create_issue_echoer'),
+    (r'^allissues$',        'helpdesk-tracker.track.views.allissues'),
+    (r'^issuejson/(\d+)/$', 'helpdesk-tracker.track.views.get_issue_json'),
 )
 if settings.DEV_ENV:
     urlpatterns += patterns('',
