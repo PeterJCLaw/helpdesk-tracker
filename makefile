@@ -4,5 +4,5 @@ all:
 rundebug:
 	./manage.py runserver	
 clean:
-	rm db.sqlite *.pyc
+	rm -f db.sqlite *.pyc
 
