@@ -31,7 +31,7 @@ def view_issue(request, issueid):
 
         return HttpResponse (template.render(c))
     #except:
-    #    return HttpResponseRedirect (settings.BASE_URL)
+    #    return HttpResponseRedirect ('/')
 
 
 def update_issue(request):
@@ -51,9 +51,9 @@ def update_issue(request):
                 i.assignedTo = mentor
         i.save()
         if (i.status == CLOSED_STATUS):
-            return HttpResponseRedirect(settings.BASE_URL)
+            return HttpResponseRedirect('/')
         else:
-            return HttpResponseRedirect(settings.BASE_URL+"viewissue/"+str(i.id))
+            return HttpResponseRedirect('/'+"viewissue/"+str(i.id))
     #except:
     #return HttpResponse("bad request", status=500)
 
@@ -76,9 +76,9 @@ def create_issue(request):
         i.ongoingNotes = ""
         i.assignedTo = ""
         i.save()
-        return HttpResponseRedirect(settings.BASE_URL+"viewissue/"+str(i.id))
+        return HttpResponseRedirect('/'+"viewissue/"+str(i.id))
     #except:
-#        return HttpResponseRedirect(settings.BASE_URL+"createissueform")
+#        return HttpResponseRedirect('/'+"createissueform")
 
 def allissues(request):
     issues = issue.objects.all()

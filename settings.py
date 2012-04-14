@@ -47,7 +47,7 @@ MEDIA_URL = 'static/'
 
 # Absolute(ish) URL to the app. Make sure to use a trailing slash.
 # Examples: "/", "/tracker/"
-BASE_URL = '/'
+BASE_URL = '/tracker/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
