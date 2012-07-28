@@ -9,8 +9,12 @@
 	<script type="text/javascript">
 		function showTime() {
 			time = new Date();
+			var minutes = time.getMinutes();
+			if (minutes < 10){
+				minutes = "0" + minutes;
+			}
 			timeBox = document.getElementById('time');
-			timeBox.innerHTML = time.getHours()+":"+time.getMinutes();
+			timeBox.innerHTML = time.getHours()+":"+minutes;
 		}
 		window.onload = showTime;
 	</script>
